@@ -4,11 +4,15 @@ var c;
 
 var input;
 function setup() {
-    input = createFileInput(handleFile);
-    createP('');
     c = createCanvas(1920, 1080);
     createP('');
- 
+    createCanvasFullscreenFuction(c);
+
+    createP('');
+    input = createFileInput(handleFile);
+    createP('');
+
+
     img = createImg('');
 
     currentNumber = minNumber;
@@ -36,7 +40,7 @@ function draw() {
     // let txt = "Teil 1:\r\n*p5js\r\n*socket.io\r\n";
     let txtSize = 296;
 
-    let txt = "*socket.io\r\n*p5js\r\n";
+    let txt = "*Anderer text\r\n";
     textAlign(RIGHT, TOP);
     textSize(txtSize);
     text(txt, width - 40, 40);
@@ -47,10 +51,10 @@ function draw() {
     text(txtNr, 40, height - (txtSize + 40));
 }
 
-function saveImg(){
+function saveImg() {
     save(c, `img${currentNumber}.png`);
     currentNumber++;
-    if(currentNumber > maxNumber){
+    if (currentNumber > maxNumber) {
         currentNumber = minNumber;
     }
 }
