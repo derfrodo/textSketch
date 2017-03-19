@@ -5,8 +5,10 @@ var c;
 var input;
 function setup() {
     c = createCanvas(1920, 1080);
+    // c.hide();
+
     createP('');
-    createCanvasFullscreenFuction(c);
+    createFullscreenButtonForDomElement(c.elt);
 
     createP('');
     input = createFileInput(handleFile);
